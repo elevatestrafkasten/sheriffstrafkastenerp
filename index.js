@@ -64,6 +64,15 @@ function startCalculating() {
             }
         }
 
+        // Grenze für Geldstrafe auf 5
+        const fineAmountElement = fineCollection[i].querySelector(".fineAmount");
+        if (cache_fine_amount > 5) {
+            cache_fine_amount = 5;
+            fineAmountElement.style.color = "red";
+        } else {
+            fineAmountElement.style.color = "";
+        }
+
         wantedAmount += cache_wanted_amount
         fineAmount += cache_fine_amount
     }
@@ -227,7 +236,7 @@ setInterval(() => {
 }, 1000)
 
 async function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function disclaimerAccepted() {
