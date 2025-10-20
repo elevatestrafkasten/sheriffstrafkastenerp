@@ -165,7 +165,7 @@ body {
     width: 100%;
     font-size: 3vh;
     font-weight: 600;
-    color: white;
+    color: rgb(255, 157, 0);
     text-align: center;
     margin-top: 5px;
 }
@@ -333,6 +333,10 @@ body {
     position: relative;
     left: 5%;
 
+}
+
+td.paragraph {
+    color: #eec114;
 }
 
 #showAttorneysButton:hover {
