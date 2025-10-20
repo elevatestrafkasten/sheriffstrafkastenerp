@@ -35,17 +35,12 @@ function startCalculating() {
     let fineAmount = 0
     let wantedResult = document.getElementById("wantedsResult")
     let wantedAmount = 0
-    let characterResult = document.getElementById("charactersResult")
     let reasonResult = document.getElementById("reasonResult")
     let reasonText = ""
-    let plate = document.getElementById("plateInput_input").value
-    let blitzerort = document.getElementById("blitzerInput_input").value
-    let infoResult = document.getElementById("infoResult")
     let noticeText = ""
     let removeWeaponLicense = false
     let removeDriverLicense = false
     let tvübergabe_org = document.getElementById("übergabeInput_select").value
-    let tvübergabe_name = document.getElementById("übergabeInput_input").value
     let shortMode = false
     let fineCollection = document.querySelectorAll(".selected")
 
@@ -110,7 +105,6 @@ function startCalculating() {
     if (removeWeaponLicense) noticeText = noticeText == "" ? "Waffenschein entziehen" : noticeText + " + Waffenschein entziehen"
     if (tvübergabe_org !== "none" && tvübergabe_name !== "") reasonText += ` - @${tvübergabe_org.toLocaleUpperCase()} ${tvübergabe_name}`
 
-    infoResult.innerHTML = `<b>Information:</b> ${noticeText}`
     fineResult.innerHTML = `<b>Geldstrafe:</b> <font style="user-select: all;">${fineAmount.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}%</font>`;
     wantedResult.innerHTML = `<b>Haftzeit:</b> <font style="user-select: all;">${wantedAmount}</font>`
     reasonResult.innerHTML = `<b>Grund:</b> <font style="user-select: all;" onclick="JavaScript:copyText(event)">${reasonText}</font>`
